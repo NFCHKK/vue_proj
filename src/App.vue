@@ -52,6 +52,7 @@
         width: 120px;
     }
     .body .center {
+        width: 100%;
         margin-left: 40px;
     }
 </style>
