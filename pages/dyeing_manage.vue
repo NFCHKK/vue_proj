@@ -46,9 +46,11 @@
       </el-drawer>-->
       <!-- </div> -->
     </div>
-    <div class="right" v-show="drawer">
-        <p>this is a p</p>
-    </div>
+      <transition name="fade">
+          <div class="right" v-show="drawer">
+              <p>this is a p</p>
+          </div>
+      </transition>
   </div>
 </template>
 
@@ -140,6 +142,7 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  overflow-x: hidden;
 }
 
 .left{
@@ -148,12 +151,25 @@ export default {
     float: left;
     width: 80%;
 }
-.right{
+.right {
   border: 1px solid #000;
   float: right;
-  width: 20%;
-  position: relative;
-  transition: all ease-in-out 5s;
-  box-shadow: -3px 3px rgb(65, 63, 63);
+  width: 25%;
+  height: 600px;
+  opacity: 100%;
+  position: absolute;
+  right:0;
+  background-color: white;
+}
+.fade-enter-active {
+    transition: right 0.8s;
+}
+
+.fade-leave-active {
+    transition: right 0s;
+}
+
+.fade-enter, .fade-leve-to {
+    right: -40%;
 }
 </style>
