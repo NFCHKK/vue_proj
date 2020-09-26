@@ -23,11 +23,8 @@
           ></el-table-column>
         </el-table>
       </div>
-      <button @click="drawer = !drawer">点我打开</button>
-      <button @click="drawer = !drawer">点我弹框</button>
-
-      <!-- <div> -->
-      <!-- <el-drawer :visible.sync="drawer" :direction="direction" :show-close="false">
+      <button @click="drawer = true">点我打开</button>
+      <el-drawer :visible.sync="drawer" :direction="direction" :show-close="false">
         <div class="drawer-entrance">
           <div class="title">染色入口:</div>
           <input v-model="dyeing.entrance" placeholder />
@@ -43,14 +40,8 @@
         <div class="btn">
           <button @click="handleAdd">确定</button>
         </div>
-      </el-drawer>-->
-      <!-- </div> -->
+      </el-drawer>
     </div>
-      <transition name="fade">
-          <div class="right" v-show="drawer">
-              <p>this is a p</p>
-          </div>
-      </transition>
   </div>
 </template>
 
@@ -150,26 +141,5 @@ export default {
     display: block;
     float: left;
     width: 80%;
-}
-.right {
-  border: 1px solid #000;
-  float: right;
-  width: 25%;
-  height: 600px;
-  opacity: 100%;
-  position: absolute;
-  right:0;
-  background-color: white;
-}
-.fade-enter-active {
-    transition: right 0.8s;
-}
-
-.fade-leave-active {
-    transition: right 0s;
-}
-
-.fade-enter, .fade-leve-to {
-    right: -40%;
 }
 </style>
